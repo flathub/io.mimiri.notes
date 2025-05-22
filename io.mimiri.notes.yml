@@ -5,7 +5,7 @@ sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
 base-version: "24.08"
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.node20
+  - org.freedesktop.Sdk.Extension.node22
 command: run.sh
 separate-locales: false
 finish-args:
@@ -14,7 +14,7 @@ finish-args:
   - "--device=dri"
   - "--share=network"
 build-options:
-  append-path: /usr/lib/sdk/node20/bin
+  append-path: /usr/lib/sdk/node22/bin
   env:
     NPM_CONFIG_LOGLEVEL: info
 modules:
@@ -24,7 +24,7 @@ modules:
       env:
         XDG_CACHE_HOME: /run/build/mimiri-notes/flatpak-node/cache
         npm_config_cache: /run/build/mimiri-notes/flatpak-node/npm-cache
-        npm_config_nodedir: /usr/lib/sdk/node20
+        npm_config_nodedir: /usr/lib/sdk/node22
         npm_config_offline: "true"
     build-commands:
       - npm install --offline
@@ -42,11 +42,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/innonova/mimiri-client-electron
-        commit: a0fdc649d6b84bc46bf909680776341c0c7e5089
+        commit: 51c396cc152202d01895a2b1caec491940572a04
         dest: main
       - type: file
-        url: https://update.mimiri.io/2024101797F6C918.2.3.1.json
-        sha256: 07c70b5aace2cfc807f39158ee025acd0714d83cfd94b8b800bb001c6c2ad0e8
+        url: https://update.mimiri.io/2024101797F6C918.2.3.25.json
+        sha256: 6e89b2ac029ca4829b30fc05bcb6d0875ba25190e08fae425fb6c12d756129e2
         dest: main
         dest-filename: bundle.json
       - generated-sources.json
