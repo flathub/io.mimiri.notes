@@ -42,11 +42,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/innonova/mimiri-client-electron
-        commit: 51c396cc152202d01895a2b1caec491940572a04
+        commit: 01c68258cc37518e146e637a9e7c12c43b236051
         dest: main
       - type: file
-        url: https://update.mimiri.io/2024101797F6C918.2.3.25.json
-        sha256: 6e89b2ac029ca4829b30fc05bcb6d0875ba25190e08fae425fb6c12d756129e2
+        url: https://update.mimiri.io/2024101797F6C918.2.4.33.json
+        sha256: cb997fab47abe0a22f574482fe9f03609ee8c2ad61ba31a2e1d4a9e6632f95b9
         dest: main
         dest-filename: bundle.json
       - generated-sources.json
