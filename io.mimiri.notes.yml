@@ -14,8 +14,6 @@ finish-args:
   - "--socket=fallback-x11"
   - "--device=dri"
   - "--share=network"
-  - "--talk-name=org.freedesktop.portal.Desktop"
-  - "--talk-name=org.kde.StatusNotifierWatcher"
 build-options:
   append-path: /usr/lib/sdk/node22/bin
   env:
