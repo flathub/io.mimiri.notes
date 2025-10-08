@@ -1,18 +1,21 @@
 app-id: io.mimiri.notes
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: "24.08"
+base-version: "25.08"
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.node22
 command: run.sh
 separate-locales: false
 finish-args:
   - "--share=ipc"
-  - "--socket=x11"
+  - "--socket=wayland"
+  - "--socket=fallback-x11"
   - "--device=dri"
   - "--share=network"
+  - "--talk-name=org.freedesktop.portal.Desktop"
+  - "--talk-name=org.kde.StatusNotifierWatcher"
 build-options:
   append-path: /usr/lib/sdk/node22/bin
   env:
@@ -42,11 +45,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/innonova/mimiri-client-electron
-        commit: 262a4d2e107b4c0ce311ddc3d45a1f235bda9f05
+        commit: e941bea3b5ab3b6a1c3bfcd30216530e3e05d3a8
         dest: main
       - type: file
-        url: https://update.mimiri.io/2024101797F6C918.2.5.24.json
-        sha256: be1e084b9e42265b879f5cbb4a71be82e62cf5c1cd113633ff6cb619f1a000c9
+        url: https://update.mimiri.io/2024101797F6C918.2.5.68.json
+        sha256: b4563257ba15b1168c2a864cb2000322a81c3d55f399e79cf9cbcba2acdbf740
         dest: main
         dest-filename: bundle.json
       - generated-sources.json
